@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0b1420">
+  <meta name="description" content="Bosu9913: applicazioni e progetti digitali. Scopri BudgetMap, l'app per la gestione del budget personale.">
+  <title>Bosu9913 | App e progetti</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --background: #0b1420;
+      --surface: #142336;
+      --border: #30485e;
+      --text: #f1f6fa;
+      --muted: #aebfce;
+      --accent: #89d7c4;
+    }
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text);
+      background: radial-gradient(ellipse at 75% 0%, #19374b 0%, transparent 48%),
+                  linear-gradient(160deg, #0b1420 0%, #101c2b 60%, #0b1420 100%);
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .container { width: min(1050px, calc(100% - 40px)); margin-inline: auto; }
+    header { border-bottom: 1px solid rgba(185, 209, 227, .14); }
+    .header-inner { min-height: 78px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .2px; text-decoration: none; font-size: 1.08rem; }
+    .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: #244454; color: #b7eadd; border: 1px solid #4a796f; font-size: .92rem; }
+    .nav-link { color: var(--muted); text-decoration: none; font-size: .94rem; }
+    .nav-link:hover { color: var(--text); }
+    main { flex: 1; padding-top: clamp(66px, 11vw, 128px); padding-bottom: 84px; }
+    .eyebrow { color: var(--accent); font-weight: 700; font-size: .77rem; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { max-width: 770px; font-size: clamp(2.3rem, 6.5vw, 4.75rem); line-height: 1.08; letter-spacing: -.055em; margin: 18px 0 22px; }
+    .lead { max-width: 610px; color: var(--muted); line-height: 1.7; font-size: clamp(1rem, 2vw, 1.14rem); margin: 0; }
+    .section-heading { margin: 74px 0 20px; font-size: 1.05rem; font-weight: 750; }
+    .app-card {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 24px;
+      border-radius: 22px; border: 1px solid var(--border);
+      padding: clamp(22px, 4vw, 34px);
+      background: linear-gradient(125deg, rgba(28, 51, 67, .94), rgba(17, 31, 46, .97));
+      box-shadow: 0 16px 45px rgba(0, 0, 0, .18);
+    }
+    .app-icon { width: 78px; height: 78px; flex: 0 0 78px; display: grid; place-items: center; border-radius: 21px; background: linear-gradient(135deg, #1b7868, #153c48); border: 1px solid #55a894; color: #e4fff4; }
+    .app-icon svg { width: 40px; height: 40px; }
+    .app-details { flex: 1 1 280px; }
+    .app-details h3 { margin: 0 0 8px; font-size: 1.55rem; }
+    .app-details p { color: var(--muted); margin: 0; line-height: 1.6; }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; text-align: center; min-height: 44px; padding: 11px 19px; border-radius: 11px; border: 1px solid transparent; text-decoration: none; font-size: .93rem; font-weight: 700; transition: background-color .15s ease, border-color .15s ease; }
+    .button-primary { background: #90ddc9; color: #0b2228; }
+    .button-primary:hover { background: #b0efdd; }
+    .button-outline { border-color: #5a7a91; color: var(--text); }
+    .button-outline:hover { background: #223c51; border-color: #7fa3ba; }
+    footer { border-top: 1px solid rgba(185, 209, 227, .14); padding: 24px 0; color: #9badbb; font-size: .82rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .footer-inner a { text-decoration: underline; text-underline-offset: 3px; }
+    @media (max-width: 520px) {
+      .header-inner { min-height: 68px; }
+      .app-card { gap: 16px; }
+      .app-icon { width: 65px; height: 65px; flex-basis: 65px; border-radius: 17px; }
+      .actions { width: 100%; }
+      .button { flex: 1 1 160px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Bosu9913, homepage">
+        <span class="brand-mark" aria-hidden="true">B.</span>
+        <span>Bosu9913</span>
+      </a>
+      <a class="nav-link" href="#app">Le mie app</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="eyebrow">Sviluppo di applicazioni</div>
+    <h1>Idee semplici.<br>Strumenti utili.</h1>
+    <p class="lead">Creo applicazioni digitali pensate per rendere più semplice la vita quotidiana. Qui trovi i miei progetti e i collegamenti per scoprirli.</p>
+
+    <section id="app" aria-labelledby="app-heading">
+      <h2 class="section-heading" id="app-heading">Applicazioni</h2>
+      <article class="app-card">
+        <div class="app-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="presentation">
+            <rect x="3" y="6" width="18" height="14" rx="3"/>
+            <path d="M3 9V6.5A2.5 2.5 0 0 1 5.5 4H18"/>
+            <path d="M16 13h5v4h-5a2 2 0 0 1 0-4Z"/>
+            <path d="M17 15h.01"/>
+          </svg>
+        </div>
+        <div class="app-details">
+          <h3>BudgetMap</h3>
+          <p>Gestisci entrate, uscite, saldi, risparmi e scadenze in un unico posto, con un'app dedicata al budget personale.</p>
+          <div class="actions">
+            <a class="button button-primary" href="/BudgetMap/">Scopri BudgetMap →</a>
+            <a class="button button-outline" href="https://play.google.com/store/apps/details?id=com.budgetmap.app" target="_blank" rel="noopener noreferrer">Apri su Google Play ↗</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Bosu9913 · Progetti digitali</span>
+      <a href="/budgetmap-privacy/">Privacy Policy di BudgetMap</a>
+    </div>
+  </footer>
+</body>
+</html>
